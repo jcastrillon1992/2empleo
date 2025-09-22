@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const isAuthenticated = true;
@@ -22,11 +22,11 @@ const Header = () => {
 
           {/* Navigation links - hidden on mobile */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a 
+            <a
               onClick={() => navigate("/find-jobs")}
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
-              Find Jobs 
+              Find Jobs
             </a>
             <a
               onClick={() => {
@@ -39,15 +39,15 @@ const Header = () => {
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
               For Employers
-            </a> 
-          </nav> 
+            </a>
+          </nav>
 
           {/* Auth Buttons */}
           <div className="flex items-center space-x-3">
             {isAuthenticated ? (
               <div className="flex item space-x-3">
                 <span className="text-gray-700">Welcome, {user?.fullName}</span>
-                <a 
+                <a
                   href={
                     user?.role === "employer"
                       ? "/employer-dashboard"
@@ -56,26 +56,26 @@ const Header = () => {
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   Dashboard
-                </a> 
-              </div> 
+                </a>
+              </div>
             ) : (
               <>
                 <a
                   href="/login"
                   className="text-gray-600 hover:text-gray-900 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-gray-50"
                 >
-                  Login 
+                  Login
                 </a>
-                <a 
+                <a
                   href="/signup"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-70 hover:to-purple-70 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
-                  Sign Up 
+                  Sign Up
                 </a>
               </>
             )}
-          </div>    
-        </div>      
+          </div>
+        </div>
       </div>
     </header>
   );
